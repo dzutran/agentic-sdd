@@ -4,7 +4,7 @@
   "description": "The Battle-Tested 4-Role Spec-Driven Framework That Turns AI Coding Assistants Into a Disciplined Engineering Team.",
   "type": "module",
   "bin": {
-    "agentic-sdd": "./bin/agentic-sdd.js"
+    "agentic-sdd": "bin/agentic-sdd.js"
   },
   "publishConfig": {
     "access": "public"
