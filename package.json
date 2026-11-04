@@ -1,6 +1,6 @@
 {
   "name": "@dzutr/agentic-sdd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Battle-Tested 4-Role Spec-Driven Framework That Turns AI Coding Assistants Into a Disciplined Engineering Team.",
   "type": "module",
   "bin": {

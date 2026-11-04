@@ -5,9 +5,9 @@
  * Zero-Dependency Pure Node.js ESM
  *
  * Commands:
- *   npx agentic-sdd init   [--target <dir>] [--name <project>] [--preset <preset>] [--ide <ide>] [--force]
- *   npx agentic-sdd doctor [--target <dir>]
- *   npx agentic-sdd verify [--target <dir>]
+ *   npx @dzutr/agentic-sdd init   [--target <dir>] [--name <project>] [--preset <preset>] [--ide <ide>] [--force]
+ *   npx @dzutr/agentic-sdd doctor [--target <dir>]
+ *   npx @dzutr/agentic-sdd verify [--target <dir>]
  */
 
 import fs from 'node:fs';
@@ -156,7 +156,7 @@ function printHelp() {
 👑 Agentic-SDD v1.0.0 — Spec-Driven Framework for Autonomous Multi-Agent Teams
 
 Usage:
-  npx agentic-sdd <command> [options]
+  npx @dzutr/agentic-sdd <command> [options]
 
 Commands:
   init      Initialize Agentic-SDD roles, tracking SOPs, presets & IDE bridges
@@ -175,9 +175,9 @@ Options for 'init':
   --force, -f              Overwrite existing files (default: safe idempotent mode)
 
 Examples:
-  npx agentic-sdd init --preset fullstack-edge --ide all
-  npx agentic-sdd doctor --target ./my-app
-  npx agentic-sdd verify --target ./my-app
+  npx @dzutr/agentic-sdd init --preset fullstack-edge --ide all
+  npx @dzutr/agentic-sdd doctor --target ./my-app
+  npx @dzutr/agentic-sdd verify --target ./my-app
 `);
 }
 
@@ -325,8 +325,8 @@ function runInit(flags) {
   console.log(`   Overwritten  : ${stats.overwritten.length} file(s)`);
   console.log(`   Skipped      : ${stats.skipped.length} existing file(s) (safe idempotent mode)\n`);
   console.log(`👉 Next Steps:`);
-  console.log(`   1. Run health check : npx agentic-sdd doctor --target "${targetDir}"`);
-  console.log(`   2. Run verification : npx agentic-sdd verify --target "${targetDir}"\n`);
+  console.log(`   1. Run health check : npx @dzutr/agentic-sdd doctor --target "${targetDir}"`);
+  console.log(`   2. Run verification : npx @dzutr/agentic-sdd verify --target "${targetDir}"\n`);
 }
 
 function runDoctor(flags) {
@@ -339,7 +339,7 @@ function runDoctor(flags) {
     checks.push({
       name: `Role file .agent-roles/${roleFile}`,
       passed: fs.existsSync(p) && fs.statSync(p).size > 0,
-      remedy: `Restore missing role file via: npx agentic-sdd init --target "${targetDir}"`
+      remedy: `Restore missing role file via: npx @dzutr/agentic-sdd init --target "${targetDir}"`
     });
   }
 
@@ -390,7 +390,7 @@ function runDoctor(flags) {
   checks.push({
     name: `Multi-IDE Adapter Bridge (${activeAdapters.length} detected)`,
     passed: activeAdapters.length > 0,
-    remedy: `Install IDE adapters via: npx agentic-sdd init --ide all --target "${targetDir}"`
+    remedy: `Install IDE adapters via: npx @dzutr/agentic-sdd init --ide all --target "${targetDir}"`
   });
 
   // 6. Check scripts/verify-standards.js
@@ -398,7 +398,7 @@ function runDoctor(flags) {
   checks.push({
     name: 'Verification script scripts/verify-standards.js',
     passed: fs.existsSync(verifyScriptPath) && fs.statSync(verifyScriptPath).size > 0,
-    remedy: `Install verification script via: npx agentic-sdd init --target "${targetDir}"`
+    remedy: `Install verification script via: npx @dzutr/agentic-sdd init --target "${targetDir}"`
   });
 
   const failedChecks = checks.filter((c) => !c.passed);
