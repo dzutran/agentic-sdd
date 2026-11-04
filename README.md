@@ -55,7 +55,7 @@ flowchart TD
 
     R4 -->|"Archives Completed Plan"| Done[("📦 tracking/done/ & CHANGELOG.md")]
 
-    subgraph Adapters ["🔌 Multi-IDE Adapter Layer (npx agentic-sdd init)"]
+    subgraph Adapters ["🔌 Multi-IDE Adapter Layer (npx @dzutr/agentic-sdd init)"]
         direction LR
         SSOT["📚 .agent-roles/ & AGENTS.md\n(Single Source of Truth)"] --> AG[".antigravity/roles/"]
         SSOT --> CU[".cursor/rules/agentic-sdd.mdc"]
@@ -72,27 +72,27 @@ flowchart TD
 ### Option A: Initialize in Any New or Existing Project (`init`)
 ```bash
 # Install all 5 roles, tracking/ SOP templates, fullstack-edge preset, and all IDE bridges:
-npx agentic-sdd init --preset fullstack-edge --ide all
+npx @dzutr/agentic-sdd init --preset fullstack-edge --ide all
 
 # Or customize project name, preset, and target directory:
-npx agentic-sdd init \
+npx @dzutr/agentic-sdd init \
   --target ./my-saas-app \
   --name "AcmeCloud" \
   --preset web-frontend \
   --ide cursor,claude,antigravity
 ```
 
-> **Safe & Idempotent by Default:** Running `npx agentic-sdd init` on an existing (Brownfield) project **never overwrites** your existing files unless you explicitly pass `--force`.
+> **Safe & Idempotent by Default:** Running `npx @dzutr/agentic-sdd init` on an existing (Brownfield) project **never overwrites** your existing files unless you explicitly pass `--force`.
 
 ### Option B: Run Configuration Health Check (`doctor`)
 ```bash
-npx agentic-sdd doctor
+npx @dzutr/agentic-sdd doctor
 ```
 Verifies that all 5 roles in `.agent-roles/`, all 5 subdirectories in `tracking/` (`plan`, `report`, `task`, `log`, `done`), `AGENTS.md`, IDE adapters, and `scripts/verify-standards.js` are intact (`100% HEALTHY`).
 
 ### Option C: Run Automated UI & Spec Standards Audit (`verify`)
 ```bash
-npx agentic-sdd verify
+npx @dzutr/agentic-sdd verify
 # Or directly via the injected standalone script:
 node scripts/verify-standards.js
 ```
