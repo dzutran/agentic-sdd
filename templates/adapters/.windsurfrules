@@ -1,0 +1,14 @@
+# Windsurf Rules — {{PROJECT_NAME}} (Agentic-SDD Framework)
+
+Always read `AGENTS.md` and `.agent-roles/00-orchestrator.md` before executing tasks.
+
+1. Follow the 4-Role Spec-Driven Lifecycle:
+   - Role 01 Planner (`.agent-roles/01-planner.md`): Clarify edge cases (Step 0) and write specs in `tracking/plan/<FEATURE>_PLAN.md`. Read-only on `src/`.
+   - Role 02 Developer (`.agent-roles/02-developer.md`): Implement code strictly matching `Impacted Files`, run `{{BUILD_COMMAND}}`, and tick `- [x]`.
+   - Role 03 QA Tester (`.agent-roles/03-tester.md`): Run `{{TEST_COMMAND}}` and `npx agentic-sdd verify`, audit edge cases & 4 viewports, and write `tracking/report/<REPORT>.md`. Run the Self-Healing Loop (max 3 iterations) until 100% PASS.
+   - Role 04 Tech Lead Gatekeeper (`.agent-roles/04-reviewer.md`): Audit `git diff`, sign off release, move completed plan to `tracking/done/`, and update `tracking/log/CHANGELOG.md`.
+
+2. UI & Code Standards:
+   - Never use generic catch-all CSS transitions; always specify explicit properties (`transition-colors`, `transition-transform`).
+   - Always use the Unicode ellipsis `…` (`&hellip;`) in UI text and loading states.
+   - Sync progress in `tracking/task/DAILY_TASKS.md`.

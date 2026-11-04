@@ -1,0 +1,34 @@
+{
+  "name": "agentic-sdd",
+  "version": "1.0.0",
+  "description": "The Battle-Tested 4-Role Spec-Driven Framework That Turns AI Coding Assistants Into a Disciplined Engineering Team.",
+  "type": "module",
+  "bin": {
+    "agentic-sdd": "./bin/agentic-sdd.js"
+  },
+  "scripts": {
+    "init": "node ./bin/agentic-sdd.js init",
+    "doctor": "node ./bin/agentic-sdd.js doctor",
+    "verify": "node ./bin/agentic-sdd.js verify",
+    "export": "node ./scripts/export-standalone-repo.js"
+  },
+  "keywords": [
+    "agentic-sdd",
+    "spec-driven-development",
+    "multi-agent",
+    "ai-coding",
+    "cursor-rules",
+    "claude-code",
+    "windsurf",
+    "github-copilot",
+    "antigravity",
+    "software-engineering",
+    "self-healing"
+  ],
+  "author": "Agentic-SDD Contributors",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {}
+}

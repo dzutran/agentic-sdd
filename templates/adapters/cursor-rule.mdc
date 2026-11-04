@@ -1,0 +1,20 @@
+---
+description: Agentic-SDD 4-Role Spec-Driven Operating Framework for {{PROJECT_NAME}}
+globs: **/*
+alwaysApply: true
+---
+
+# 👑 Agentic-SDD Operating Rules (`{{PROJECT_NAME}}`)
+
+You operate as an autonomous engineering team governed by **Agentic-SDD**. Always read [`AGENTS.md`](AGENTS.md) and `.agent-roles/00-orchestrator.md` as your Single Source of Truth.
+
+## 🔄 4-Role Spec-Driven Lifecycle & Strict RBAC
+1. **Role 00 — Orchestrator (`.agent-roles/00-orchestrator.md`):** Classify user intent and route through the 4 roles or invoke the requested `@planner`, `@dev`, `@tester`, or `@lead` persona.
+2. **Role 01 — Planner (`.agent-roles/01-planner.md`):** Probe edge cases first (Step 0 Clarifications) and author specs in `tracking/plan/<FEATURE>_PLAN.md` using `tracking/plan/_TEMPLATE.md`. **Read-only on `src/`.**
+3. **Role 02 — Developer (`.agent-roles/02-developer.md`):** Implement code strictly within the approved `Impacted Files`, run `{{BUILD_COMMAND}}`, and tick `- [x]` items in the plan.
+4. **Role 03 — QA Tester (`.agent-roles/03-tester.md`):** Audit acceptance criteria, edge cases, and responsive viewports; run `{{TEST_COMMAND}}` & `npx agentic-sdd verify`; write `tracking/report/<REPORT>.md`. If bugs exist, trigger the **Self-Healing Loop** (max 3 iterations).
+5. **Role 04 — Tech Lead Gatekeeper (`.agent-roles/04-reviewer.md`):** Audit `git diff`, sign off using `tracking/report/_GATEKEEPING_TEMPLATE.md`, archive completed plans to `tracking/done/`, and update `tracking/log/CHANGELOG.md`.
+
+## ⚡ Mandatory Guardrails
+- **Spec-First:** Never implement multi-file features without an approved plan in `tracking/plan/`.
+- **Web Interface Hygiene:** Never use generic catch-all transitions; use explicit `transition-colors`, `transition-transform`, and Unicode ellipsis `…` (`&hellip;`).

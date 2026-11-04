@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Logs & temporary test artifacts
+*.log
+npm-debug.log*
+.tmp/
+temp/
+coverage/
+dist/
