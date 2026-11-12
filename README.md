@@ -14,12 +14,15 @@
 
 Most AI coding workflows rely on **ad-hoc prompting** or **static specification templates** executed by a single AI persona. While helpful for small prototypes, production software engineering requires **separation of duties, strict tool whitelisting (RBAC), independent QA verification, and an uncompromising release gatekeeper**.
 
-`Agentic-SDD` was forged and battle-tested in commercial production environments (achieving **95–100 Google PageSpeed Insights**, **OWASP Zero-Trust security**, **WCAG 2.2 AA 100/100 accessibility**, and **Edge Serverless reliability**) by synthesizing four foundational multi-agent engineering pillars into one zero-dependency toolkit:
+`Agentic-SDD` was forged and battle-tested in commercial production environments (achieving **95–100 Google PageSpeed Insights**, **OWASP Zero-Trust security**, **WCAG 2.2 AA 100/100 accessibility**, and **Edge Serverless reliability**) by synthesizing seven foundational multi-agent engineering pillars into one zero-dependency toolkit:
 
-1. **SOP Artifact Handoffs (Standard Operating Procedures via Markdown):** Every transition between roles produces an immutable, git-tracked Markdown artifact inside `tracking/`.
-2. **Strict Role & Tool Whitelisting (RBAC):** Planners and QA Testers are strictly **Read-Only** on application source code (`src/`). Only Developers write production code; only the Tech Lead Gatekeeper archives plans and signs off releases.
-3. **Autonomous Self-Healing Loop:** When QA detects a defect, Developer and QA automatically iterate (up to 3 cycles) until 100% of Acceptance Criteria pass—without interrupting the user.
-4. **Two-Tier Reasoning vs. Execution:** Decouples high-level architectural probing (**Step 0 Clarifications**) from deterministic, zero-drift code execution.
+1. **GitHub Spec-Kit SDD & Explicit Non-Goals:** No spec, no code. Every plan defines strict Non-Goals to prevent scope drift and protect sensitive existing logic.
+2. **SOP Artifact Handoffs (Standard Operating Procedures via Markdown):** Every transition between roles produces an immutable, git-tracked Markdown artifact inside `tracking/`.
+3. **Strict Role & Tool Whitelisting (RBAC):** Planners and QA Testers are strictly **Read-Only** on application source code (`src/`). Only Developers write production code; only the Tech Lead Gatekeeper archives plans and signs off releases.
+4. **Autonomous Self-Healing Loop:** When QA detects a defect, Developer and QA automatically iterate (up to 3 cycles) until 100% of Acceptance Criteria pass—without interrupting the user.
+5. **Ruflo Trajectory Bank (Institutional Memory):** Persistent incident memory bank (`tracking/memory/INCIDENT_PATTERNS.md`) prevents repeating platform quirks, command escaping errors, and router drops.
+6. **Flash-First Execution Policy (Token Economy):** Default to lighter, ultra-fast models (`flash`) for subagents to save 70%+ token costs, reserving larger models only for complex architectural reasoning.
+7. **Visual Workflow & Handoff Cockpit Protocol:** Inline Generative UI widgets (`templates/visual/agent_cockpit.html`) render client-side interactive steppers at **0 token cost** for real-time team observability in chat.
 
 ### 📊 Architectural Comparison: Static Spec Templates vs. `Agentic-SDD`
 

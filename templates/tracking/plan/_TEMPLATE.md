@@ -31,14 +31,21 @@ flowchart LR
 
 ---
 
-## 2. 🔍 SCOPE
+## 2. 🔍 SCOPE & EXPLICIT BOUNDARIES
 
 ### ✅ In-Scope:
 - [Feature A: End-to-end data flow and state management]
 - [UI Component B: Views, modals, and responsive states]
 - [API / Schema C: Endpoints, validation rules, and migrations]
 
-### ❌ Out-of-Scope (Preventing Scope Creep):
+### ⛔ Explicit Non-Goals (Hàng Rào An Toàn Bất Biến — What This Feature WILL NOT Do):
+> [!WARNING]
+> The following items are STRICTLY FORBIDDEN from being touched, modified, or implemented in this plan. Any deviation will cause Role 04 (Gatekeeper) to immediately reject the release:
+- **Non-Goal 1:** [e.g., Do NOT implement K80 receipt printing or sticker generation]
+- **Non-Goal 2:** [e.g., Do NOT modify core pricing algorithms outside the approved scope]
+- **Non-Goal 3:** [e.g., Do NOT introduce breaking changes to database schemas without explicit migrations]
+
+### ❌ Out-of-Scope (Future Enhancements):
 - [Items explicitly deferred to future stages to prevent Scope Creep]
 - [Unrelated refactoring outside the Impacted Files table]
 
@@ -46,7 +53,7 @@ flowchart LR
 
 ## 3. 📝 ACTION ITEMS CHECKLIST
 
-### Phase 1: Data Model & Core Logic
+### Phase 1: Data Model, Schema & Core Logic
 - [ ] **Task 1.1:** [Detailed implementation step]
 - [ ] **Task 1.2:** [Detailed implementation step]
 
@@ -56,12 +63,12 @@ flowchart LR
 
 ### Phase 3: Verification & Standards Compliance
 - [ ] **Task 3.1:** [Verify responsive layout across 4 viewports: Mobile 430px, Tablet 768px/1024px, Desktop 1440px+]
-- [ ] **Task 3.2:** [Run `{{BUILD_COMMAND}}`, `{{TEST_COMMAND}}`, and `npx agentic-sdd verify`]
+- [ ] **Task 3.2:** [Run `{{BUILD_COMMAND}}`, `{{TEST_COMMAND}}`, and `npx @dzutr/agentic-sdd verify`]
 - [ ] **Task 3.3:** [Sync progress in `tracking/task/DAILY_TASKS.md` and `tracking/log/YYYY-MM-DD.md`]
 
 ---
 
-## 4. 📂 IMPACTED FILES
+## 4. 📁 IMPACTED FILES
 
 | Action | File Path | Description of Changes |
 | :---: | :--- | :--- |
@@ -78,6 +85,7 @@ A feature is only ready for release when **100%** of the following criteria pass
 1. **Functional & Boundary Integrity:**
    - [ ] Works accurately per the Goal section with zero unhandled exceptions (`null`/`undefined`/`NaN`).
    - [ ] Gracefully handles empty states, invalid inputs, and network timeouts.
+   - [ ] Strictly adheres to all items in **Explicit Non-Goals** (Zero Scope Drift).
 
 2. **Performance, Security & Web Interface Guidelines:**
    - [ ] Zero generic catch-all transitions; uses explicit `transition-colors` / `transition-transform`.
