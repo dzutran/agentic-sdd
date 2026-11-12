@@ -44,10 +44,6 @@
    - Subagents (`planner`, `developer`, `tester`) default to lighter, faster models (`Model: 'flash'`) for standard tasks to maximize speed and reduce token consumption by up to 70%.
    - Only escalate to larger models when tackling complex multi-tier architectural decisions.
 
-7. **Visual Workflow & Handoff Cockpit Protocol:**
-   - Visual role transitions are presented inline using interactive Generative UI (`templates/visual/agent_cockpit.html`) or structured handoff cards.
-   - User interactions (clicking tabs/roles) execute entirely client-side via local JavaScript at **0 token cost**.
-
 ---
 
 ## 🚦 2. Intent Dispatching Matrix

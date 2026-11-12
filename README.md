@@ -22,7 +22,6 @@ Most AI coding workflows rely on **ad-hoc prompting** or **static specification 
 4. **Autonomous Self-Healing Loop:** When QA detects a defect, Developer and QA automatically iterate (up to 3 cycles) until 100% of Acceptance Criteria pass—without interrupting the user.
 5. **Ruflo Trajectory Bank (Institutional Memory):** Persistent incident memory bank (`tracking/memory/INCIDENT_PATTERNS.md`) prevents repeating platform quirks, command escaping errors, and router drops.
 6. **Flash-First Execution Policy (Token Economy):** Default to lighter, ultra-fast models (`flash`) for subagents to save 70%+ token costs, reserving larger models only for complex architectural reasoning.
-7. **Visual Workflow & Handoff Cockpit Protocol:** Inline Generative UI widgets (`templates/visual/agent_cockpit.html`) render client-side interactive steppers at **0 token cost** for real-time team observability in chat.
 
 ### 📊 Architectural Comparison: Static Spec Templates vs. `Agentic-SDD`
 

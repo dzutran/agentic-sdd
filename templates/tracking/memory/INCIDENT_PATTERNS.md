@@ -44,3 +44,4 @@
 ### 3.3. Zero Secret Leaks in Client Bundles
 - **Problem:** Accidentally importing server-side service keys into frontend components bundles secrets into production static assets.
 - **Solution:** Use separate service layers. Never reference `SERVICE_ROLE`, `RESEND_API_KEY`, or `ADMIN_PASSWORD` in files built by Vite/Rollup for the browser.
+
